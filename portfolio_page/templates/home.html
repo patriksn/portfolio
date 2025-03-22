@@ -10,7 +10,7 @@
             Welcome to My Portfolio
         </h1>
         <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto fade-in">
-            I'm a passionate developer creating beautiful and functional web applications.
+            I'm a passionate engineer venturing into the world of AI and ML.
         </p>
         <div class="flex justify-center space-x-4 fade-in">
             <a href="{{ url_for('projects') }}" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200">
@@ -48,7 +48,10 @@
                 <img src="{{ url_for('static', filename='images/project2.JPG') }}" alt="Project 2" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Bachelor's Thesis</h3>
-                    <p class="text-gray-600 mb-4">Developing an SVM model to classify human activity based on accelerometer and gyroscope data. <br> <a href="https://www.diva-portal.org/smash/record.jsf?dswid=6950&pid=diva2%3A1635754&c=1&searchType=SIMPLE&language=en&query=%22Erik+Wendel%22+%22Patrik+Svensson%22&af=%5B%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=false&sf=all" target="_blank" class="text-blue-600 hover:text-blue-800">View thesis →</a></p>
+                    <p class="text-gray-600 mb-4">Developing a CNN and a SVM model to classify human activity based on accelerometer and gyroscope data. 
+                        <a href="https://www.diva-portal.org/smash/record.jsf?dswid=6950&pid=diva2%3A1635754&c=1&searchType=SIMPLE&language=en&query=%22Erik+Wendel%22+%22Patrik+Svensson%22&af=%5B%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=false&sf=all" target="_blank" class="text-blue-600 hover:text-blue-800">View on Diva →</a>
+                        <!--<a href="{{ url_for('static', filename='pdfs/bachelors_thesis.pdf') }}" target="_blank" class="text-blue-600 hover:text-blue-800 ml-2">Download PDF →</a>-->
+                    </p>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">python</span>
                         <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">scikit-learn</span>
@@ -59,7 +62,7 @@
 
             <!-- Project Card 3 -->
             <div class="bg-white rounded-lg shadow-lg overflow-hidden fade-in">
-                <img src="{{ url_for('static', filename='images/project3.jpg') }}" alt="Project 3" class="w-full h-48 object-cover">
+                <img src="{{ url_for('static', filename='images/project3.JPG') }}" alt="Project 3" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Low-level programming</h3>
                     <p class="text-gray-600 mb-4">Software responsible for a group project at KTH</p>
@@ -85,7 +88,7 @@
                     <i class="fab fa-python text-4xl text-blue-600"></i>
                 </div>
                 <h3 class="text-lg font-semibold text-gray-900">Python</h3>
-                <p class="text-gray-600">Scripting and backend</p>
+                <p class="text-gray-600">Scripting and data processing</p>
             </div>
 
             <!-- Skill 2 -->
