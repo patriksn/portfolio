@@ -52,9 +52,9 @@ Talisman(app,
     content_security_policy={
         'default-src': "'self'",
         'script-src': ["'self'", "'unsafe-inline'", "cdn.tailwindcss.com"],
-        'style-src': ["'self'", "'unsafe-inline'", "cdnjs.cloudflare.com"],
+        'style-src': ["'self'", "'unsafe-inline'", "cdnjs.cloudflare.com", "use.fontawesome.com"],
         'img-src': ["'self'", "data:", "https:", "via.placeholder.com"],
-        'font-src': ["'self'", "cdnjs.cloudflare.com"],
+        'font-src': ["'self'", "cdnjs.cloudflare.com", "use.fontawesome.com"],
     },
     force_https=False  # Allow HTTP for development
 )
