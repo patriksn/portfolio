@@ -3,59 +3,89 @@
 {% block title %}About - Portfolio{% endblock %}
 
 {% block content %}
-<div class="bg-white rounded-lg shadow-lg p-8">
-    <h1 class="text-3xl font-bold text-gray-800 mb-6">About Me</h1>
-    
-    <div class="prose max-w-none">
-        <p class="text-gray-600 mb-6">
-            I am a passionate developer with expertise in web development and software engineering.
-            I love creating elegant solutions to complex problems and am always eager to learn new technologies.
-        </p>
+<!-- About Section -->
+<section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Profile Image -->
+            <div class="fade-in">
+                <img src="https://via.placeholder.com/500x500" alt="Profile" class="rounded-lg shadow-lg w-full">
+            </div>
 
-        <h2 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Skills</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-            <div class="bg-gray-50 p-4 rounded-lg">
-                <h3 class="font-semibold text-gray-800">Frontend</h3>
-                <ul class="list-disc list-inside text-gray-600">
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>JavaScript</li>
-                    <li>React</li>
-                </ul>
-            </div>
-            <div class="bg-gray-50 p-4 rounded-lg">
-                <h3 class="font-semibold text-gray-800">Backend</h3>
-                <ul class="list-disc list-inside text-gray-600">
-                    <li>Python</li>
-                    <li>Flask</li>
-                    <li>Django</li>
-                    <li>SQL</li>
-                </ul>
-            </div>
-            <div class="bg-gray-50 p-4 rounded-lg">
-                <h3 class="font-semibold text-gray-800">Tools</h3>
-                <ul class="list-disc list-inside text-gray-600">
-                    <li>Git</li>
-                    <li>Docker</li>
-                    <li>AWS</li>
-                    <li>Linux</li>
-                </ul>
-            </div>
-        </div>
+            <!-- About Content -->
+            <div class="fade-in">
+                <h1 class="text-4xl font-bold text-gray-900 mb-6">About Me</h1>
+                <p class="text-lg text-gray-600 mb-6">
+                    I'm a passionate software developer with a strong foundation in web development and a keen eye for creating beautiful, user-friendly applications. With several years of experience in the industry, I've worked on various projects ranging from small business websites to complex web applications.
+                </p>
+                <p class="text-lg text-gray-600 mb-8">
+                    My journey in software development began with a curiosity for creating things that make a difference. I believe in writing clean, maintainable code and following best practices to ensure the highest quality of work.
+                </p>
 
-        <h2 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Experience</h2>
-        <div class="space-y-6">
-            <div class="border-l-4 border-blue-500 pl-4">
-                <h3 class="font-semibold text-gray-800">Senior Developer</h3>
-                <p class="text-gray-600">Company Name • 2020 - Present</p>
-                <p class="text-gray-600 mt-2">Led development of multiple web applications and mentored junior developers.</p>
-            </div>
-            <div class="border-l-4 border-blue-500 pl-4">
-                <h3 class="font-semibold text-gray-800">Full Stack Developer</h3>
-                <p class="text-gray-600">Company Name • 2018 - 2020</p>
-                <p class="text-gray-600 mt-2">Developed and maintained various web applications using modern technologies.</p>
+                <!-- Experience -->
+                <div class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">Experience</h2>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h3 class="text-lg font-semibold text-gray-900">Senior Developer</h3>
+                            <p class="text-gray-600">Company Name • 2020 - Present</p>
+                            <p class="text-gray-600 mt-2">Led development of multiple web applications and mentored junior developers.</p>
+                        </div>
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h3 class="text-lg font-semibold text-gray-900">Full Stack Developer</h3>
+                            <p class="text-gray-600">Company Name • 2018 - 2020</p>
+                            <p class="text-gray-600 mt-2">Developed and maintained various web applications using modern technologies.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">Education</h2>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h3 class="text-lg font-semibold text-gray-900">Bachelor of Science in Computer Science</h3>
+                            <p class="text-gray-600">University Name • 2014 - 2018</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<!-- Values Section -->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12 fade-in">My Values</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Value 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg fade-in">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-code text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Clean Code</h3>
+                <p class="text-gray-600">I believe in writing clean, maintainable code that follows best practices and is easy to understand.</p>
+            </div>
+
+            <!-- Value 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg fade-in">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-users text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">User-First Approach</h3>
+                <p class="text-gray-600">I prioritize user experience and create applications that are intuitive and easy to use.</p>
+            </div>
+
+            <!-- Value 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg fade-in">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-lightbulb text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Innovation</h3>
+                <p class="text-gray-600">I constantly explore new technologies and approaches to create better solutions.</p>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %} 

@@ -6,6 +6,7 @@ from flask_limiter.util import get_remote_address
 from flask_talisman import Talisman
 from email_validator import validate_email, EmailNotValidError
 import os
+from flask_mail import Mail, Message
 
 # Load environment variables
 load_dotenv()
@@ -18,6 +19,13 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///por
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['WTF_CSRF_ENABLED'] = True
 app.config['WTF_CSRF_SECRET_KEY'] = os.getenv('CSRF_SECRET_KEY', 'csrf-secret-key')
+
+# Configure Flask-Mail
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.getenv('EMAIL_USER')
+app.config['MAIL_PASSWORD'] = os.getenv('EMAIL_PASSWORD')
 
 # Initialize security extensions
 csrf = CSRFProtect(app)
@@ -35,6 +43,8 @@ Talisman(app,
         'font-src': ["'self'", "cdnjs.cloudflare.com"],
     }
 )
+
+mail = Mail(app)
 
 @app.route('/')
 def home():
@@ -54,10 +64,11 @@ def contact():
     if request.method == 'POST':
         name = request.form.get('name', '').strip()
         email = request.form.get('email', '').strip()
+        subject = request.form.get('subject', '').strip()
         message = request.form.get('message', '').strip()
 
         # Validate inputs
-        if not all([name, email, message]):
+        if not all([name, email, subject, message]):
             flash('All fields are required.', 'error')
             return redirect(url_for('contact'))
 
@@ -67,10 +78,30 @@ def contact():
             flash('Invalid email address.', 'error')
             return redirect(url_for('contact'))
 
-        # Here you would typically send the email or store the message
-        # For now, we'll just flash a success message
-        flash('Message sent successfully!', 'success')
-        return redirect(url_for('contact'))
+        try:
+            # Create email message
+            msg = Message(
+                subject=f'Portfolio Contact: {subject}',
+                sender=email,
+                recipients=[os.getenv('EMAIL_USER')]
+            )
+            msg.body = f"""
+            From: {name}
+            Email: {email}
+            Subject: {subject}
+            
+            Message:
+            {message}
+            """
+
+            # Send email
+            mail.send(msg)
+            flash('Your message has been sent successfully!', 'success')
+            return redirect(url_for('contact'))
+
+        except Exception as e:
+            flash('An error occurred. Please try again later.', 'error')
+            return redirect(url_for('contact'))
 
     return render_template('contact.html')
 
