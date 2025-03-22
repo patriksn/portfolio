@@ -7,7 +7,7 @@
 <section class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto text-center">
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 fade-in">
-            Welcome to My Portfolio
+            Welcome to my portfolio
         </h1>
         <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto fade-in">
             I'm a passionate engineer venturing into the world of AI and ML.
@@ -20,7 +20,7 @@
                 Contact Me
             </a>
         </div>
-        <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto fade-in">
+        <p class="text-sm text-gray-600 mb-8 max-w-2xl mx-auto fade-in">
             <br>Scroll down for an overview of my projects and skills
         </p>
     </div>
@@ -35,12 +35,13 @@
             <div class="bg-white rounded-lg shadow-lg overflow-hidden fade-in">
                 <img src="{{ url_for('static', filename='images/project1.JPG') }}" alt="Project 1" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Master's Thesis</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Estimating neonatal brain maturationg with explainable ML</h3>
                     <p class="text-gray-600 mb-4">Developed an explainable ML model to predict the maturation of the brain in preterm neonates based on EEG data. <a href="https://www.diva-portal.org/smash/record.jsf?dswid=9279&pid=diva2%3A1768830&c=18&searchType=SIMPLE&language=en&query=%22patrik+svensson%22&af=%5B%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=true&sf=undergraduate" target="_blank" class="text-blue-600 hover:text-blue-800">View thesis →</a></p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Python</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">python</span>
                         <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">scikit-learn</span>
                         <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Data pipelines</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Data Wrangling</span>
                         <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Feature importance</span>
                     </div>
                 </div>
@@ -50,7 +51,7 @@
             <div class="bg-white rounded-lg shadow-lg overflow-hidden fade-in">
                 <img src="{{ url_for('static', filename='images/project2.JPG') }}" alt="Project 2" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Bachelor's Thesis</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Human activity recognition with CNN and SVM</h3>
                     <p class="text-gray-600 mb-4">Developing a CNN and a SVM model to classify human activity based on accelerometer and gyroscope data. 
                         <a href="https://www.diva-portal.org/smash/record.jsf?dswid=6950&pid=diva2%3A1635754&c=1&searchType=SIMPLE&language=en&query=%22Erik+Wendel%22+%22Patrik+Svensson%22&af=%5B%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=false&sf=all" target="_blank" class="text-blue-600 hover:text-blue-800">View on Diva →</a>
                         <a href="{{ url_for('static', filename='pdfs/bachelors_thesis.pdf') }}" target="_blank" class="text-blue-600 hover:text-blue-800 ml-2">Download PDF →</a>
@@ -58,6 +59,7 @@
                     <div class="flex flex-wrap gap-2">
                         <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">python</span>
                         <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">scikit-learn</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">TensorFlow</span>
                         <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Data collection</span>
                     </div>
                 </div>
@@ -67,7 +69,7 @@
             <div class="bg-white rounded-lg shadow-lg overflow-hidden fade-in">
                 <img src="{{ url_for('static', filename='images/project3.JPG') }}" alt="Project 3" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Low-level programming</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">SW responsible for KTH project</h3>
                     <p class="text-gray-600 mb-4">Software responsible for a group project at KTH</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">C++</span>
@@ -97,16 +99,18 @@
             <!-- Skill 2 -->
             <div class="text-center fade-in">
                 <div class="w-16 h-16 mx-auto mb-4">
-                    <i class="fab fa-js text-4xl text-yellow-400"></i>
+                    <i class="fab fa-brain text-4xl text-yellow-400"></i>
                 </div>
                 <h3 class="text-lg font-semibold text-gray-900">Machine Learning</h3>
-                <p class="text-gray-600">scikit-learn, Tensorflow + more</p>
+                <p class="text-gray-600">scikit-learn, TensorFlow + more</p>
             </div>
 
             <!-- Skill 3 -->
             <div class="text-center fade-in">
                 <div class="w-16 h-16 mx-auto mb-4">
                     <i class="fab fa-react text-4xl text-blue-400"></i>
+                    <i class="fab fa-chart-line text-4xl text-blue-400"></i>
+                    <i class="fab fa-code text-4xl text-blue-400"></i>
                 </div>
                 <h3 class="text-lg font-semibold text-gray-900">Data Analysis</h3>
                 <p class="text-gray-600">Pandas, Matplotlib, Seaborn, MATLAB</p>
