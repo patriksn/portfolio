@@ -41,40 +41,44 @@
         <h2 class="text-3xl font-bold text-center text-gray-900 mb-12 fade-in">Featured Projects</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Project Card 1 -->
-            <div class="bg-white rounded-lg shadow-[0_4px_20px_4px_rgba(0,0,0,0.3)] overflow-hidden fade-in">
-                <img src="{{ url_for('static', filename='images/project1.JPG') }}" alt="Project 1" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Estimating neonatal brain maturation with explainable ML</h3>
-                    <p class="text-gray-600 mb-4">Developed an explainable ML model to predict the maturation of the brain in preterm neonates based on EEG data. <a href="https://www.diva-portal.org/smash/record.jsf?dswid=9279&pid=diva2%3A1768830&c=18&searchType=SIMPLE&language=en&query=%22patrik+svensson%22&af=%5B%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=true&sf=undergraduate" target="_blank" class="text-blue-600 hover:text-blue-800">View on Diva →</a></p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">python Notebook</span>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">scikit-learn</span>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Data Wrangling</span>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Feature importance</span>
+            <a href="{{ url_for('project_detail', project_id='neonatal-brain-maturation') }}" class="block">
+                <div class="bg-white rounded-lg shadow-[0_4px_20px_4px_rgba(0,0,0,0.3)] overflow-hidden fade-in hover:shadow-[0_4px_25px_4px_rgba(0,0,0,0.4)] transition-shadow duration-300">
+                    <img src="{{ url_for('static', filename='images/project1.JPG') }}" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Estimating neonatal brain maturation with explainable ML</h3>
+                        <p class="text-gray-600 mb-4">Developed an explainable ML model to predict the maturation of the brain in preterm neonates based on EEG data. <a href="https://www.diva-portal.org/smash/record.jsf?dswid=9279&pid=diva2%3A1768830&c=18&searchType=SIMPLE&language=en&query=%22patrik+svensson%22&af=%5B%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=true&sf=undergraduate" target="_blank" class="text-blue-600 hover:text-blue-800">View on Diva →</a></p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">python Notebook</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">scikit-learn</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Data Wrangling</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Feature importance</span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
 
             <!-- Project Card 2 -->
-            <div class="bg-white rounded-lg shadow-[0_4px_20px_4px_rgba(0,0,0,0.3)] overflow-hidden fade-in justify-center">
-                <div class="relative w-full h-48 overflow-hidden bg-gray-50">
-                    <img src="{{ url_for('static', filename='images/project2.JPG') }}" alt="Project 5" class="w-full h-full object-contain bg-black bg-opacity-10">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Human activity recognition with CNN and SVM</h3>
-                    <p class="text-gray-600 mb-4">Developing a CNN and a SVM model to classify human activity based on accelerometer and gyroscope data. 
-                        <a href="https://www.diva-portal.org/smash/record.jsf?dswid=6950&pid=diva2%3A1635754&c=1&searchType=SIMPLE&language=en&query=%22Erik+Wendel%22+%22Patrik+Svensson%22&af=%5B%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=false&sf=all" target="_blank" class="text-blue-600 hover:text-blue-800">View on Diva →</a>
-                        <a href="{{ url_for('static', filename='pdfs/bachelors_thesis.pdf') }}" target="_blank" class="text-blue-600 hover:text-blue-800 ml-2">Download PDF →</a>
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">python Notebook</span>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">scikit-learn</span>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">TensorFlow</span>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Data Collection</span>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">ML Mathematical Theory</span>
+            <a href="{{ url_for('project_detail', project_id='activity-recognition') }}" class="block">
+                <div class="bg-white rounded-lg shadow-[0_4px_20px_4px_rgba(0,0,0,0.3)] overflow-hidden fade-in hover:shadow-[0_4px_25px_4px_rgba(0,0,0,0.4)] transition-shadow duration-300 justify-center">
+                    <div class="relative w-full h-48 overflow-hidden bg-gray-50">
+                        <img src="{{ url_for('static', filename='images/project2.JPG') }}" alt="Project 5" class="w-full h-full object-contain bg-black bg-opacity-10">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Human activity recognition with CNN and SVM</h3>
+                        <p class="text-gray-600 mb-4">Developing a CNN and a SVM model to classify human activity based on accelerometer and gyroscope data. 
+                            <a href="https://www.diva-portal.org/smash/record.jsf?dswid=6950&pid=diva2%3A1635754&c=1&searchType=SIMPLE&language=en&query=%22Erik+Wendel%22+%22Patrik+Svensson%22&af=%5B%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=false&sf=all" target="_blank" class="text-blue-600 hover:text-blue-800">View on Diva →</a>
+                            <a href="{{ url_for('static', filename='pdfs/bachelors_thesis.pdf') }}" target="_blank" class="text-blue-600 hover:text-blue-800 ml-2">Download PDF →</a>
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">python Notebook</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">scikit-learn</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">TensorFlow</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Data Collection</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">ML Mathematical Theory</span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
 
             <!-- Project Card 4 -->
             <div class="bg-white rounded-lg shadow-[0_4px_20px_4px_rgba(0,0,0,0.3)] overflow-hidden fade-in">

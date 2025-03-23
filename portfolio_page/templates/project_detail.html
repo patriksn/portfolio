@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.title }} - Portfolio{% endblock %}
+
+{% block content %}
+<!-- Project Detail Header -->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4 fade-in">{{ project.title }}</h1>
+            <div class="flex flex-wrap justify-center gap-2 mb-6">
+                {% for tech in project.technologies %}
+                <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">{{ tech | safe }}</span>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Project Image -->
+        <div class="mb-12">
+            <img src="{{ url_for('static', filename='images/' + project.image) }}" 
+                 alt="{{ project.title }}" 
+                 class="w-full max-h-[500px] object-contain mx-auto rounded-lg shadow-lg">
+        </div>
+
+        <!-- Project Content -->
+        <div class="max-w-3xl mx-auto">
+            <div class="prose prose-lg">
+                {{ project.content | safe }}
+            </div>
+
+            <!-- Project Links -->
+            <div class="mt-8 flex flex-wrap gap-4 justify-center">
+                {% if project.links.thesis %}
+                <a href="{{ project.links.thesis }}" 
+                   target="_blank" 
+                   class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    <i class="fas fa-file-alt mr-2"></i> View Thesis
+                </a>
+                {% endif %}
+                {% if project.links.pdf %}
+                <a href="{{ url_for('static', filename=project.links.pdf) }}" 
+                   target="_blank" 
+                   class="inline-flex items-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-download mr-2"></i> Download PDF
+                </a>
+                {% endif %}
+                {% if project.links.github %}
+                <a href="{{ project.links.github }}" 
+                   target="_blank" 
+                   class="inline-flex items-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors">
+                    <i class="fab fa-github mr-2"></i> View on GitHub
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 
