@@ -214,7 +214,7 @@ def about():
         return "An error occurred", 500
 
 @app.route('/projects')
-def projects():
+def projects_page():
     try:
         return render_template('projects.html', projects=projects)
     except Exception as e:
@@ -272,12 +272,95 @@ def contact():
         logger.error(f"Error in contact route: {str(e)}")
         return "An error occurred", 500
 
-@app.route('/project/<project_id>')
-def project_detail(project_id):
-    project = projects.get(project_id)
-    if project is None:
-        abort(404)
-    return render_template('project_detail.html', project=project)
+@app.route('/neonatal-brain-maturation')
+def project1():
+    try:
+        logger.info("Attempting to render project1 page")
+        project = projects.get('neonatal-brain-maturation')
+        logger.info(f"Project data retrieved: {project}")
+        if project:
+            return render_template('project1.html', project=project)
+        else:
+            logger.error("Project not found")
+            return render_template('404.html'), 404
+    except Exception as e:
+        logger.error(f"Error rendering project1: {str(e)}", exc_info=True)
+        return render_template('500.html'), 500
+
+@app.route('/activity-recognition')
+def project2():
+    try:
+        logger.info("Attempting to render project2 page")
+        project = projects.get('activity-recognition')
+        logger.info(f"Project data retrieved: {project}")
+        if project:
+            return render_template('project2.html', project=project)
+        else:
+            logger.error("Project not found")
+            return render_template('404.html'), 404
+    except Exception as e:
+        logger.error(f"Error rendering project2: {str(e)}", exc_info=True)
+        return render_template('500.html'), 500
+
+@app.route('/lung-segmentation')
+def project3():
+    try:
+        logger.info("Attempting to render project3 page")
+        project = projects.get('lung-segmentation')
+        logger.info(f"Project data retrieved: {project}")
+        if project:
+            return render_template('project3.html', project=project)
+        else:
+            logger.error("Project not found")
+            return render_template('404.html'), 404
+    except Exception as e:
+        logger.error(f"Error rendering project3: {str(e)}", exc_info=True)
+        return render_template('500.html'), 500
+
+@app.route('/kth-project')
+def project4():
+    try:
+        logger.info("Attempting to render project4 page")
+        project = projects.get('kth-project')
+        logger.info(f"Project data retrieved: {project}")
+        if project:
+            return render_template('project4.html', project=project)
+        else:
+            logger.error("Project not found")
+            return render_template('404.html'), 404
+    except Exception as e:
+        logger.error(f"Error rendering project4: {str(e)}", exc_info=True)
+        return render_template('500.html'), 500
+
+@app.route('/housebot')
+def project5():
+    try:
+        logger.info("Attempting to render project5 page")
+        project = projects.get('housebot')
+        logger.info(f"Project data retrieved: {project}")
+        if project:
+            return render_template('project5.html', project=project)
+        else:
+            logger.error("Project not found")
+            return render_template('404.html'), 404
+    except Exception as e:
+        logger.error(f"Error rendering project5: {str(e)}", exc_info=True)
+        return render_template('500.html'), 500
+
+@app.route('/nightscout')
+def project6():
+    try:
+        logger.info("Attempting to render project6 page")
+        project = projects.get('nightscout')
+        logger.info(f"Project data retrieved: {project}")
+        if project:
+            return render_template('project6.html', project=project)
+        else:
+            logger.error("Project not found")
+            return render_template('404.html'), 404
+    except Exception as e:
+        logger.error(f"Error rendering project6: {str(e)}", exc_info=True)
+        return render_template('500.html'), 500
 
 @app.errorhandler(404)
 def not_found_error(error):
@@ -289,4 +372,4 @@ def internal_error(error):
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=False) 
+    app.run(host='0.0.0.0', port=port, debug=True)  # Enable debug mode 
