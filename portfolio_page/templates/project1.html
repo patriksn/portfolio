@@ -14,14 +14,42 @@
         </div>
     </div>
 
-    <!-- Project Image -->
-    <div class="max-w-4xl mx-auto">
-        <img src="{{ url_for('static', filename='images/' + project.image) }}" alt="{{ project.title }}" class="w-1/4 h-auto rounded-lg shadow-lg mx-auto">
+    <!-- First Block: Image Left, Text Right -->
+    <div class="flex flex-col md:flex-row gap-8 mb-12">
+        <div class="md:w-1/4">
+            <img src="{{ url_for('static', filename='images/' + project.image) }}" alt="{{ project.title }}" class="w-full h-auto rounded-lg shadow-lg">
+        </div>
+        <div class="md:w-3/4 prose">
+            <h2>Overview</h2>
+            <p>This project focused on developing a machine learning model to predict brain maturation in preterm neonates using EEG data. The model was designed to be explainable, allowing healthcare professionals to understand its decision-making process.</p>
+        </div>
     </div>
 
-    <!-- Project Content -->
-    <div class="prose max-w-none">
-        {{ project.content | safe }}
+    <!-- Second Block: Text Left, Image Right -->
+    <div class="flex flex-col-reverse md:flex-row gap-8 mb-12">
+        <div class="md:w-3/4 prose">
+            <h2>Key Features</h2>
+            <ul>
+                <li>Developed an explainable ML model that performed comparably to expert doctors</li>
+                <li>Implemented feature importance analysis to identify key EEG patterns</li>
+                <li>Created a robust data pipeline for processing and analyzing EEG data</li>
+                <li>Utilized scikit-learn for model development and evaluation</li>
+            </ul>
+        </div>
+        <div class="md:w-1/4">
+            <img src="{{ url_for('static', filename='images/project1_2.JPG') }}" alt="Project 1 Feature Analysis" class="w-full h-auto rounded-lg shadow-lg">
+        </div>
+    </div>
+
+    <!-- Third Block: Image Left, Text Right -->
+    <div class="flex flex-col md:flex-row gap-8 mb-12">
+        <div class="md:w-1/4">
+            <img src="{{ url_for('static', filename='images/project1_3.png') }}" alt="Project 1 Results" class="w-full h-auto rounded-lg shadow-lg">
+        </div>
+        <div class="md:w-3/4 prose">
+            <h2>Technical Details</h2>
+            <p>The project involved extensive data wrangling and feature engineering to extract meaningful patterns from EEG data. The model was trained on a carefully curated dataset and validated against expert assessments.</p>
+        </div>
     </div>
 
     {% if project.links %}
