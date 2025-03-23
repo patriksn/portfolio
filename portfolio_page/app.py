@@ -110,13 +110,97 @@ projects = {
             'pdf': 'pdfs/bachelors_thesis.pdf'
         }
     },
+    'lung-segmentation': {
+        'title': 'Lung segmentation using Neural Networks',
+        'image': 'project4.JPG',
+        'description': 'Designing a neural network to segment lungs in CT scans. Model was deployed in a Docker container and accessed using CLI.',
+        'content': '''
+            <p>This project focused on developing a neural network model for automated lung segmentation in CT scans, with a focus on deployment and accessibility.</p>
+            
+            <h2>Key Features</h2>
+            <ul>
+                <li>Developed a custom neural network architecture for lung segmentation</li>
+                <li>Containerized the model using Docker for easy deployment</li>
+                <li>Created a CLI interface for model interaction</li>
+                <li>Implemented robust data preprocessing pipeline</li>
+            </ul>
+            
+            <h2>Technical Details</h2>
+            <p>The project utilized TensorFlow for the neural network implementation and Docker for containerization. The model was trained on a curated dataset of CT scans and validated against expert annotations.</p>
+        ''',
+        'technologies': ['Tensorflow', 'Data Wrangling', 'Neural Network Design', 'Docker'],
+        'links': {}
+    },
+    'kth-project': {
+        'title': 'SW responsible for KTH project',
+        'image': 'project3.JPG',
+        'description': 'Software responsible for a group project at KTH where we built an automatic plant watering and lighting system.',
+        'content': '''
+            <p>Led the software development for an automated plant care system at KTH, focusing on system integration and control logic.</p>
+            
+            <h2>Key Features</h2>
+            <ul>
+                <li>Developed control software for automated plant care system</li>
+                <li>Implemented sensor integration and actuator control</li>
+                <li>Created user interface for system monitoring</li>
+                <li>Managed team coordination and project planning</li>
+            </ul>
+            
+            <h2>Technical Details</h2>
+            <p>The project combined C++ for the main control logic with Arduino for hardware interaction. The system included sensors for soil moisture and light levels, controlling water pumps and LED lights accordingly.</p>
+        ''',
+        'technologies': ['C++', 'Arduino', 'Soft skills'],
+        'links': {}
+    },
+    'housebot': {
+        'title': 'HouseBot',
+        'image': 'project5.JPG',
+        'description': 'Made a script that scrapes a specific website for new apartment ads and sends them to a Discord server.',
+        'content': '''
+            <p>Developed an automated apartment hunting assistant that monitors housing websites and notifies users through Discord.</p>
+            
+            <h2>Key Features</h2>
+            <ul>
+                <li>Automated web scraping of housing websites</li>
+                <li>Real-time Discord notifications</li>
+                <li>Multi-threaded design for efficient monitoring</li>
+                <li>Customizable search criteria</li>
+            </ul>
+            
+            <h2>Technical Details</h2>
+            <p>The project utilized Python for web scraping and API integration with Discord. The multi-threaded design ensures efficient monitoring of multiple housing websites simultaneously.</p>
+        ''',
+        'technologies': ['API calls', 'Web Scraping', 'python', 'Threading'],
+        'links': {}
+    },
+    'nightscout': {
+        'title': 'Nightscout',
+        'image': 'project6.JPG',
+        'description': 'Set up a server to host a website that displays my blood sugar data. Not my code design but I learnt about server management and data flows.',
+        'content': '''
+            <p>Implemented and managed a Nightscout server for continuous glucose monitoring data visualization. </p>
+            
+            <h2>Key Features</h2>
+            <ul>
+                <li>Server setup and configuration</li>
+                <li>Database management and optimization</li>
+                <li>Data flow implementation</li>
+                <li>System monitoring and maintenance</li>
+            </ul>
+            
+            <h2>Technical Details</h2>
+            <p>The project involved setting up and managing a MongoDB database, implementing data flows from glucose monitoring devices, and ensuring reliable server operation.</p>
+        ''',
+        'technologies': ['Databases', 'Server Management', 'MongoDB'],
+        'links': {}
+    },
     # Add more projects here...
 }
 
 @app.route('/')
 def home():
     try:
-        return render_template('home.html')
+        return render_template('home.html', projects=projects)
     except Exception as e:
         logger.error(f"Error rendering home page: {str(e)}")
         return "An error occurred", 500
@@ -132,7 +216,7 @@ def about():
 @app.route('/projects')
 def projects():
     try:
-        return render_template('projects.html')
+        return render_template('projects.html', projects=projects)
     except Exception as e:
         logger.error(f"Error rendering projects page: {str(e)}")
         return "An error occurred", 500
