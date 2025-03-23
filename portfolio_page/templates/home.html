@@ -47,9 +47,8 @@
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Estimating neonatal brain maturation with explainable ML</h3>
                     <p class="text-gray-600 mb-4">Developed an explainable ML model to predict the maturation of the brain in preterm neonates based on EEG data. <a href="https://www.diva-portal.org/smash/record.jsf?dswid=9279&pid=diva2%3A1768830&c=18&searchType=SIMPLE&language=en&query=%22patrik+svensson%22&af=%5B%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=true&sf=undergraduate" target="_blank" class="text-blue-600 hover:text-blue-800">View on Diva →</a></p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">python</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">python Notebook</span>
                         <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">scikit-learn</span>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Data pipelines</span>
                         <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Data Wrangling</span>
                         <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Feature importance</span>
                     </div>
@@ -58,7 +57,7 @@
 
             <!-- Project Card 2 -->
             <div class="bg-white rounded-lg shadow-lg overflow-hidden fade-in">
-                <img src="{{ url_for('static', filename='images/project2.JPG') }}" alt="Project 2" class="w-[80%] h-48 object-cover">
+                <img src="{{ url_for('static', filename='images/project2.JPG') }}" alt="Project 2" class="w-[60%] h-48 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Human activity recognition with CNN and SVM</h3>
                     <p class="text-gray-600 mb-4">Developing a CNN and a SVM model to classify human activity based on accelerometer and gyroscope data. 
@@ -66,10 +65,26 @@
                         <a href="{{ url_for('static', filename='pdfs/bachelors_thesis.pdf') }}" target="_blank" class="text-blue-600 hover:text-blue-800 ml-2">Download PDF →</a>
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">python</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">python Notebook</span>
                         <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">scikit-learn</span>
                         <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">TensorFlow</span>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Data collection</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Data Collection</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">ML Mathematical Theory</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+                <img src="{{ url_for('static', filename='images/project4.JPG') }}" alt="Project 4" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Lung segmentation using Neural Networks</h3>
+                    <p class="text-gray-600 mb-4">Designing a neural network to segment lungs in CT scans. Model was deployed in a Docker container and acessed using CLI.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Tensorflow</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Data Wrangling</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Neural Network Design</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Docker</span>
                     </div>
                 </div>
             </div>
@@ -84,6 +99,35 @@
                         <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">C++</span>
                         <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Arduino</span>
                         <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Soft skills</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 5 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+                <img src="{{ url_for('static', filename='images/project5.JPG') }}" alt="Project 5" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Housebot</h3>
+                    <p class="text-gray-600 mb-4">Made a script that scrapes a specific website for new apartment ads and sends them to a Discord server. Created it to help a friend get an apartment.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">API calls</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Web Scraping</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">python</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Threading</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 6 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+                <img src="{{ url_for('static', filename='images/project6.JPG') }}" alt="Project 6" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2"></h3>
+                    <p class="text-gray-600 mb-4">S</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Databases</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Server Management</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">MongoDB</span>
                     </div>
                 </div>
             </div>
