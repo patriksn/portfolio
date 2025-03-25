@@ -15,13 +15,14 @@
     </div>
 
 <!-- Learning Highlights Box -->
-<div class="bg-gray-100 p-4 rounded-lg shadow-[0_4px_20px_4px_rgba(0,0,0,0.3)] w-1/2 mb-8">
+<div class="bg-gray-200 p-4 rounded-lg shadow-[0_4px_20px_4px_rgba(0,0,0,0.3)] md:w-1/3 mb-8">
     <h3 class="font-bold underline mb-2">Quick summary of my learnings</h3>
     <ul class="list-disc pl-5">
         <li>SVM+CNN theory and experience</li>
         <li>scikit-learn and TensorFlow</li>
-        <li>Data processing pipeline</li>
+        <li>Data collection and processing</li>
         <li>Model design</li>
+        <li>ML mathematical theory behind the models</li>
         <li>Model evaluation</li>
     </ul>
 </div>
@@ -30,27 +31,31 @@
     <div class="flex flex-col md:flex-row gap-8 mb-12">
         <div class="md:w-1/3">
             <img src="{{ url_for('static', filename='images/' + project.image) }}" alt="{{ project.title }}" class="w-full h-auto rounded-lg shadow-lg">
+            <figcaption class="text-center text-sm text-gray-600">Confusion matrix for the SVM model.</figcaption>
         </div>
         <div class="md:w-2/3 prose">
             <h2 class="font-bold underline">Overview</h2>
-            <p>This project focused on comparing the performance of two different ML models for the task to classify human activities (standing, running, walking, walking in stairs) from accelerometer data. The project included data collection, data processing, model training, and model evaluation and comparison. Both models had high performance but the SVM model outperformed the CNN model slightly. </p>
+            <p>This project focused on comparing the performance of two different ML models for the task to classify human activities (standing, running, walking, walking in stairs) from accelerometer data. The project included data collection, data processing, model training, and model evaluation and comparison. Both models had high performance but the SVM model outperformed the CNN model slightly (99.29% vs 99.16% accuracy). </p>
         </div>
     </div>
 
     <!-- Second Block: Text Left, Image Right -->
     <div class="flex flex-col-reverse md:flex-row gap-8 mb-12">
         <div class="md:w-2/3 prose">
-            <h2 class="font-bold underline">Key Points</h2>
+            <h2 class="font-bold underline">Key things I learnt</h2>
             <ul class="list-disc pl-5">
-                <li>Collected sensor data from smartphones.</li>
-                <li>Created a data processing pipeline from the raw data to the model input. The data flow can be seen in the image.</li>
+                <li>Data collection and the value of keeping it organized.</li>
+                <li>Data processing practices.</li>
+                <li>Handling uneven distributions in the data.</li>
                 <li>Feature selection and hyperparameter tuning/model design for the two models.</li>
                 <li>Learnt about evaluation metrics.</li>
-                <li>Gained experience with scikit-learn and TensorFlow.</li>
+                <li>Gained experience with pandas, scikit-learn and TensorFlow.</li>
+                <li>Learnt the mathematical theory behind SVMs and CNNs (see report for more details, link below).</li>
             </ul>
         </div>
         <div class="md:w-1/3">
             <img src="{{ url_for('static', filename='images/project2_1.JPG') }}" alt="Project 1 Feature Analysis" class="w-full h-auto rounded-lg shadow-lg">
+            <figcaption class="text-center text-sm text-gray-600">The full data pipeline.</figcaption>
         </div>
     </div>
 
@@ -58,17 +63,12 @@
     <div class="flex flex-col md:flex-row gap-8 mb-12">
         <div class="md:w-1/3">
             <img src="{{ url_for('static', filename='images/project2_2.JPG') }}" alt="Project 2 Results" class="w-full h-auto rounded-lg shadow-lg">
+            <figcaption class="text-center text-sm text-gray-600">Example of raw data.</figcaption>
         </div>
         <div class="md:w-2/3 prose">
-            <h2 class="font-bold underline">Technical Skills I learnt</h2>
+            <h2 class="font-bold underline">Add later</h2>
             <ul class="list-disc pl-5">
-                <li>Data collection and data pre-processing.</li>
-                <li>Creating a data processing pipeline.</li>
-                <li>Handling uneven distributions in the data.</li>
-                <li>Feature selection and hyperparameter tuning.</li>
-                <li>Model evaluation and comparison.</li>
-                <li>Gained experience with numpy, pandas, scikit-learn and TensorFlow.</li>
-                <li>Learnt the mathematical theory behind SVMs and CNNs (see report for more details).</li>
+                <li>Add later</li>
             </ul>
         </div>
     </div>
