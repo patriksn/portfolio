@@ -112,7 +112,7 @@ projects = {
     },
     'lung-segmentation': {
         'title': 'Lung segmentation using Neural Networks',
-        'image': 'project4.JPG',
+        'image': 'project3.JPG',
         'description': 'Designing a neural network to segment lungs in CT scans. Model was deployed in a Docker container and accessed using CLI.',
         'content': '''
             <p>This project focused on developing a neural network model for automated lung segmentation in CT scans, with a focus on deployment and accessibility.</p>
