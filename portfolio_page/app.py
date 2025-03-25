@@ -128,7 +128,7 @@ projects = {
             <h2>Technical Details</h2>
             <p>The project utilized TensorFlow for the neural network implementation and Docker for containerization. The model was trained on a curated dataset of CT scans and validated against expert annotations.</p>
         ''',
-        'technologies': ['Tensorflow', 'Data Wrangling', 'Neural Network Design', 'Docker'],
+        'technologies': ['python','Tensorflow', 'keras', 'Docker'],
         'links': {}
     },
     'kth-project': {
