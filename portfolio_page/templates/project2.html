@@ -22,7 +22,7 @@
         <li>scikit-learn and TensorFlow</li>
         <li>Data collection and processing</li>
         <li>Model design</li>
-        <li>ML mathematical theory behind the models</li>
+        <li>ML mathematical theory</li>
         <li>Model evaluation</li>
     </ul>
 </div>
@@ -65,25 +65,26 @@
             <img src="{{ url_for('static', filename='images/project2_2.JPG') }}" alt="Project 2 Results" class="w-full h-auto rounded-lg shadow-lg">
             <figcaption class="text-center text-sm text-gray-600">Example of raw data.</figcaption>
         </div>
-        <div class="md:w-2/3 prose">
+        <!--<div class="md:w-2/3 prose">
             <h2 class="font-bold underline">Add later</h2>
             <ul class="list-disc pl-5">
                 <li>Add later</li>
             </ul>
+        </div>-->
+        {% if project.links %}
+        <div class="mt-8">
+            {% if project.links.thesis %}
+            <p>You can find the complete thesis and documentation here:</p>
+            <a href="{{ project.links.thesis }}" target="_blank" class="text-blue-600 hover:text-blue-800">View on DiVA →</a>
+            {% endif %}
+            {% if project.links.pdf %}
+            <p>You can also download the thesis PDF here:</p>
+            <a href="{{ url_for('static', filename=project.links.pdf) }}" target="_blank" class="text-blue-600 hover:text-blue-800">Download PDF →</a>
+            {% endif %}
         </div>
+        {% endif %}
     </div>
 
-    {% if project.links %}
-    <div class="mt-8">
-        {% if project.links.thesis %}
-        <p>You can find the complete thesis and documentation here:</p>
-        <a href="{{ project.links.thesis }}" target="_blank" class="text-blue-600 hover:text-blue-800">View on DiVA →</a>
-        {% endif %}
-        {% if project.links.pdf %}
-        <p>You can also download the thesis PDF here:</p>
-        <a href="{{ url_for('static', filename=project.links.pdf) }}" target="_blank" class="text-blue-600 hover:text-blue-800">Download PDF →</a>
-        {% endif %}
-    </div>
-    {% endif %}
+    
 </div>
 {% endblock %} 
