@@ -3,15 +3,51 @@
 {% block title %}About - Portfolio{% endblock %}
 
 {% block content %}
-<!-- About Section -->
-<section class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Left Column -->
+        <div class="space-y-12">
             <!-- Profile Image -->
             <div class="fade-in">
                 <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile" class="rounded-lg shadow-lg w-full">
             </div>
 
+            <!-- Values Section -->
+            <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-8 fade-in">My Values</h2>
+                <div class="space-y-6">
+                    <!-- Value 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow fade-in">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-code text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Clean Code</h3>
+                        <p class="text-gray-600">I believe in writing clean, maintainable code that follows best practices and is easy to understand.</p>
+                    </div>
+
+                    <!-- Value 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow fade-in">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tasks text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Responsible</h3>
+                        <p class="text-gray-600">I take ownership of my tasks and projects and I'm always looking for ways to learn more and improve my work.</p>
+                    </div>
+
+                    <!-- Value 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow fade-in">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-lightbulb text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Adaptability</h3>
+                        <p class="text-gray-600">I love exploring new exciting technologies to create better models and data insights, and I'm happy to work in a fast-paced and changing environment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="space-y-12">
             <!-- About Content -->
             <div class="fade-in">
                 <h1 class="text-4xl font-bold text-gray-900 mb-6">About Me</h1>
@@ -30,9 +66,12 @@
                 <p class="text-lg text-gray-600 mb-8">
                     I am currently learning PostgreSQL, refreshing my skills in Python and TensorFlow and I'm also learning about Docker, Kubernetes and AWS. I'm also competing in Kaggle data science competitions to sharpen my ML skills further.
                 </p>
+            </div>
 
+            <!-- Experience and Education -->
+            <div class="space-y-8">
                 <!-- Experience -->
-                <div class="mb-8">
+                <div>
                     <h2 class="text-2xl font-semibold text-gray-900 mb-4">Experience</h2>
                     <div class="space-y-4">
                         <div class="border-l-4 border-blue-600 pl-4">
@@ -60,7 +99,7 @@
                         <div class="border-l-4 border-blue-600 pl-4">
                             <h3 class="text-lg font-semibold text-gray-900">Master of Science in Medical Engineering</h3>
                             <p class="text-gray-600">KTH Royal Institute of Technology • 2021 - 2023</p>
-                            <p class="text-gray-600 mt-2">Courses in signal/data processing, deep learning and multiple project courses dealing with data. Wrote my <a href="{{ url_for('project1') }}" class="text-blue-600 hover:text-blue-800"">master's thesis</a> in ML.</p>
+                            <p class="text-gray-600 mt-2">Courses in signal/data processing, deep learning and multiple project courses dealing with data. Wrote my <a href="{{ url_for('project1') }}" class="text-blue-600 hover:text-blue-800">master's thesis</a> in ML.</p>
                         </div>
                         <div class="border-l-4 border-blue-600 pl-4">
                             <h3 class="text-lg font-semibold text-gray-900">Bachelor of Science in Electrical Engineering</h3>
@@ -72,40 +111,5 @@
             </div>
         </div>
     </div>
-</section>
-
-<!-- Values Section -->
-<section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12 fade-in">My Values</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Value 1 -->
-            <div class="bg-white p-6 rounded-lg shadow-lg fade-in">
-                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-code text-blue-600 text-xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Clean Code</h3>
-                <p class="text-gray-600">I believe in writing clean, maintainable code that follows best practices and is easy to understand.</p>
-            </div>
-
-            <!-- Value 2 -->
-            <div class="bg-white p-6 rounded-lg shadow-lg fade-in">
-                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-tasks text-blue-600 text-xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Responsible</h3>
-                <p class="text-gray-600">I take ownership of my tasks and projects and I'm always looking for ways to learn more and improve my work.</p>
-            </div>
-
-            <!-- Value 3 -->
-            <div class="bg-white p-6 rounded-lg shadow-lg fade-in">
-                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-lightbulb text-blue-600 text-xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Adaptability</h3>
-                <p class="text-gray-600">I love exploring new exciting technologies to create better models and data insights, and I'm happy to work in a fast-paced and changing environment.</p>
-            </div>
-        </div>
-    </div>
-</section>
+</div>
 {% endblock %} 
