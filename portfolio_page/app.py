@@ -83,7 +83,8 @@ projects = {
         ''',
         'technologies': ['python', 'scikit-learn', 'Data Wrangling', 'Feature importance'],
         'links': {
-            'thesis': 'https://www.diva-portal.org/smash/record.jsf?dswid=9279&pid=diva2%3A1768830&c=18&searchType=SIMPLE&language=en&query=%22patrik+svensson%22&af=%5B%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=true&sf=undergraduate'
+            'thesis': 'https://www.diva-portal.org/smash/record.jsf?dswid=9279&pid=diva2%3A1768830&c=18&searchType=SIMPLE&language=en&query=%22patrik+svensson%22&af=%5B%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=true&sf=undergraduate',
+            'pdf': 'pdfs/MastersThesisSvensson.pdf'
         }
     },
     'activity-recognition': {
