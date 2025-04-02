@@ -31,7 +31,14 @@
     <!-- First Block: Image Left, Text Right -->
     <div class="flex flex-col md:flex-row gap-8 mb-12">
         <div class="md:w-1/4">
-            <img src="{{ url_for('static', filename='images/' + project.image) }}" alt="{{ project.title }}" class="w-full h-auto rounded-lg shadow-lg">
+            <a href="{{ url_for('static', filename='images/' + project.image) }}" 
+               data-fancybox="gallery"
+               data-caption="{{ project.title }}"
+               class="cursor-pointer hover:opacity-90 transition-opacity">
+                <img src="{{ url_for('static', filename='images/' + project.image) }}" 
+                     alt="{{ project.title }}" 
+                     class="w-full h-auto rounded-lg shadow-lg">
+            </a>
         </div>
         <div class="md:w-3/4 prose">
             <h2 class="font-bold underline">Overview</h2>
@@ -52,7 +59,14 @@
             </ul>
         </div>
         <div class="md:w-1/4">
-            <img src="{{ url_for('static', filename='images/project1_2.JPG') }}" alt="Project 1 Feature Analysis" class="w-full h-auto rounded-lg shadow-lg">
+            <a href="{{ url_for('static', filename='images/project1_2.JPG') }}" 
+               data-fancybox="gallery"
+               data-caption="Raw time-series EEG data."
+               class="cursor-pointer hover:opacity-90 transition-opacity">
+                <img src="{{ url_for('static', filename='images/project1_2.JPG') }}" 
+                     alt="Project 1 Feature Analysis" 
+                     class="w-full h-auto rounded-lg shadow-lg">
+            </a>
             <figcaption class="text-center text-sm text-gray-600">Raw time-series EEG data.</figcaption>
         </div>
     </div>
@@ -60,8 +74,15 @@
     <!-- Third Block: Image Left, Text Right -->
     <div class="flex flex-col md:flex-row gap-8 mb-12">
         <div class="md:w-1/4">
-            <img src="{{ url_for('static', filename='images/project1_4.JPG') }}" alt="Project 1 Results" class="w-full h-auto rounded-lg shadow-lg">
-            <figcaption class="text-center text-sm text-gray-600">SHAP feature importance evaluation.</figcaption>
+            <a href="{{ url_for('static', filename='images/project1_4.JPG') }}" 
+               data-fancybox="gallery"
+               data-caption="Heatmap of feature correlation."
+               class="cursor-pointer hover:opacity-90 transition-opacity">
+                <img src="{{ url_for('static', filename='images/project1_3.png') }}" 
+                     alt="Project 1 Results" 
+                     class="w-full h-auto rounded-lg shadow-lg">
+            </a>
+            <figcaption class="text-center text-sm text-gray-600">Heatmap of feature correlation.</figcaption>
         </div>
         <div class="md:w-3/4 prose">
             <h2 class="font-bold underline">Technical Details</h2>
