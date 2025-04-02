@@ -3,6 +3,34 @@
 {% block title %}{{ project.title }} - Portfolio{% endblock %}
 
 {% block content %}
+<style>
+    .zoomable {
+        cursor: zoom-in;
+        transition: transform 0.3s ease-out;
+    }
+
+    .zoomed {
+        cursor: zoom-out;
+        transform: scale(2);
+    }
+
+    .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+        z-index: 998;
+    }
+
+    img.zoomed {
+        position: relative;
+        z-index: 999;
+    }
+</style>
+
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- Project Header -->
     <div class="mb-12">
@@ -14,31 +42,27 @@
         </div>
     </div>
 
-<!-- Learning Highlights Box -->
-<div class="bg-gray-200 p-4 rounded-lg shadow-[0_4px_20px_4px_rgba(0,0,0,0.3)] md:w-1/3 mb-8">
-    <h3 class="font-bold underline mb-2">Quick summary of my learnings</h3>
-    <ul class="list-disc pl-5">
-        <li>Explainable ML models, theory and practice</li>
-        <li>scikit-learn</li>
-        <li>Data processing and pipeline</li>
-        <li>Feature engineering and selection</li>
-        <li>Model design (regression tree)</li>
-        <li>SHAP feature evaluation</li>
-    </ul>
-    <p><br>Read the full report <a href="{{ project.links.thesis }}" target="_blank" class="text-blue-600 hover:text-blue-800">here</a>.</p>
-</div>
+    <!-- Learning Highlights Box -->
+    <div class="bg-gray-200 p-4 rounded-lg shadow-[0_4px_20px_4px_rgba(0,0,0,0.3)] md:w-1/3 mb-8">
+        <h3 class="font-bold underline mb-2">Quick summary of my learnings</h3>
+        <ul class="list-disc pl-5">
+            <li>Explainable ML models, theory and practice</li>
+            <li>scikit-learn</li>
+            <li>Data processing and pipeline</li>
+            <li>Feature engineering and selection</li>
+            <li>Model design (regression tree)</li>
+            <li>SHAP feature evaluation</li>
+        </ul>
+        <p><br>Read the full report <a href="{{ project.links.thesis }}" target="_blank" class="text-blue-600 hover:text-blue-800">here</a>.</p>
+    </div>
 
     <!-- First Block: Image Left, Text Right -->
     <div class="flex flex-col md:flex-row gap-8 mb-12">
         <div class="md:w-1/4">
-            <a href="{{ url_for('static', filename='images/' + project.image) }}" 
-               data-fancybox="gallery"
-               data-caption="{{ project.title }}"
-               class="cursor-pointer hover:opacity-90 transition-opacity">
-                <img src="{{ url_for('static', filename='images/' + project.image) }}" 
-                     alt="{{ project.title }}" 
-                     class="w-full h-auto rounded-lg shadow-lg">
-            </a>
+            <img src="{{ url_for('static', filename='images/' + project.image) }}" 
+                 alt="{{ project.title }}" 
+                 class="w-full h-auto rounded-lg shadow-lg zoomable"
+                 onclick="toggleZoom(this)">
         </div>
         <div class="md:w-3/4 prose">
             <h2 class="font-bold underline">Overview</h2>
@@ -59,14 +83,10 @@
             </ul>
         </div>
         <div class="md:w-1/4">
-            <a href="{{ url_for('static', filename='images/project1_2.JPG') }}" 
-               data-fancybox="gallery"
-               data-caption="Raw time-series EEG data."
-               class="cursor-pointer hover:opacity-90 transition-opacity">
-                <img src="{{ url_for('static', filename='images/project1_2.JPG') }}" 
-                     alt="Project 1 Feature Analysis" 
-                     class="w-full h-auto rounded-lg shadow-lg">
-            </a>
+            <img src="{{ url_for('static', filename='images/project1_2.JPG') }}" 
+                 alt="Project 1 Feature Analysis" 
+                 class="w-full h-auto rounded-lg shadow-lg zoomable"
+                 onclick="toggleZoom(this)">
             <figcaption class="text-center text-sm text-gray-600">Raw time-series EEG data.</figcaption>
         </div>
     </div>
@@ -74,15 +94,11 @@
     <!-- Third Block: Image Left, Text Right -->
     <div class="flex flex-col md:flex-row gap-8 mb-12">
         <div class="md:w-1/4">
-            <a href="{{ url_for('static', filename='images/project1_4.JPG') }}" 
-               data-fancybox="gallery"
-               data-caption="Heatmap of feature correlation."
-               class="cursor-pointer hover:opacity-90 transition-opacity">
-                <img src="{{ url_for('static', filename='images/project1_3.png') }}" 
-                     alt="Project 1 Results" 
-                     class="w-full h-auto rounded-lg shadow-lg">
-            </a>
-            <figcaption class="text-center text-sm text-gray-600">Heatmap of feature correlation.</figcaption>
+            <img src="{{ url_for('static', filename='images/project1_6.png') }}" 
+                 alt="Project 1 Results" 
+                 class="w-full h-auto rounded-lg shadow-lg zoomable"
+                 onclick="toggleZoom(this)">
+            <figcaption class="text-center text-sm text-gray-600">SHAP feature importance evaluation.</figcaption>
         </div>
         <div class="md:w-3/4 prose">
             <h2 class="font-bold underline">Technical Details</h2>
@@ -103,4 +119,40 @@
     </div>
     {% endif %}
 </div>
+
+<script>
+    function toggleZoom(img) {
+        const hasZoom = img.classList.contains('zoomed');
+        
+        // Remove any existing backdrops
+        const existingBackdrop = document.querySelector('.backdrop');
+        if (existingBackdrop) {
+            existingBackdrop.remove();
+        }
+        
+        if (!hasZoom) {
+            // Create backdrop
+            const backdrop = document.createElement('div');
+            backdrop.className = 'backdrop';
+            backdrop.onclick = () => toggleZoom(img);
+            img.parentElement.appendChild(backdrop);
+            
+            // Add zoom
+            img.classList.add('zoomed');
+        } else {
+            // Remove zoom
+            img.classList.remove('zoomed');
+        }
+    }
+
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === "Escape") {
+            const zoomedImg = document.querySelector('.zoomed');
+            if (zoomedImg) {
+                toggleZoom(zoomedImg);
+            }
+        }
+    });
+</script>
 {% endblock %} 
