@@ -4,14 +4,17 @@
 
 {% block content %}
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
     .zoomable {
         cursor: zoom-in;
         transition: transform 0.3s ease-out;
+        position: relative;
     }
 
     .zoomed {
         cursor: zoom-out;
-        transform: scale(2);
+        transform: scale(2.5);
     }
 
     .backdrop {
@@ -28,6 +31,35 @@
     img.zoomed {
         position: relative;
         z-index: 999;
+    }
+
+    .handwritten {
+        font-family: 'Indie Flower', cursive;
+        font-size: 1.5rem;
+        color: #4B5563;
+    }
+
+    .arrow {
+        position: absolute;
+        right: -40px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #4B5563;
+        font-size: 2rem;
+        opacity: 0.7;
+        z-index: 1;
+    }
+
+    .zoom-text {
+        position: absolute;
+        right: -130px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.9rem;
+        color: #4B5563;
+        white-space: nowrap;
+        z-index: 1;
+        margin-left: 10px;
     }
 </style>
 
@@ -82,11 +114,13 @@
                 <li>Used SHAP to explain the model's predictions, and rank the features based on their importance</li>
             </ul>
         </div>
-        <div class="md:w-1/4">
+        <div class="md:w-1/4 relative">
             <img src="{{ url_for('static', filename='images/project1_2.JPG') }}" 
                  alt="Project 1 Feature Analysis" 
                  class="w-full h-auto rounded-lg shadow-lg zoomable"
                  onclick="toggleZoom(this)">
+            <i class="fas fa-arrow-left arrow"></i>
+            <span class="zoom-text">Click to zoom</span>
             <figcaption class="text-center text-sm text-gray-600">Raw time-series EEG data.</figcaption>
         </div>
     </div>
