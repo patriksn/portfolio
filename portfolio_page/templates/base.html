@@ -20,6 +20,18 @@
             opacity: 1;
             transform: translateY(0);
         }
+        #projects-dropdown {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        #projects-menu:hover + #projects-dropdown,
+        #projects-dropdown:hover {
+            display: block;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
@@ -34,7 +46,19 @@
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="{{ url_for('home') }}" class="text-gray-600 hover:text-blue-600 transition-colors duration-200">Home</a>
-                    <a href="{{ url_for('projects_page') }}" class="text-gray-600 hover:text-blue-600 transition-colors duration-200">Projects</a>
+                    <div class="relative">
+                        <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-200" id="projects-menu">Projects</a>
+                        <!-- Drop-down menu -->
+                        <ul class="absolute hidden text-gray-700 pt-1 group-hover:block" id="projects-dropdown">
+                            <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="{{ url_for('projects_page') }}">Overview</a></li>
+                            <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="{{ url_for('project1') }}">Project 1</a></li>
+                            <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="{{ url_for('project2') }}">Project 2</a></li>
+                            <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="{{ url_for('project3') }}">Project 3</a></li>
+                            <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="{{ url_for('project4') }}">Project 4</a></li>
+                            <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="{{ url_for('project5') }}">Project 5</a></li>
+                            <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="{{ url_for('project6') }}">Project 6</a></li>
+                        </ul>
+                    </div>
                     <a href="{{ url_for('about') }}" class="text-gray-600 hover:text-blue-600 transition-colors duration-200">About</a>
                     <a href="{{ url_for('contact') }}" class="text-gray-600 hover:text-blue-600 transition-colors duration-200">Contact</a>
                 </div>
