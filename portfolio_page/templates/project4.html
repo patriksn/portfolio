@@ -20,7 +20,15 @@
             <img src="{{ url_for('static', filename='images/project4.JPG') }}" alt="{{ project.title }}" class="w-full h-auto rounded-lg shadow-lg">
         </div>
         <div class="md:w-2/3 prose">
-            {{ project.content | safe }}
+            <p>Developed the software for an automated plant care system at KTH, focusing on control logic and user interface. A relatively small project but I learnt to program a full application from scratch and interact with the other engineering students and their parts of the system. <br></p>
+            
+            <h2 class="font-bold underline">Key Features</h2>
+            <ul class="list-disc pl-5">
+                <li>Arduino C++ application from scratch</li>
+                <li>Created a menu system for user interaction, setting water and light values</li>
+                <li>Dealing with user input, sensor input and control logic simultaneously</li>
+            </ul>
+            
         </div>
     </div>
 
