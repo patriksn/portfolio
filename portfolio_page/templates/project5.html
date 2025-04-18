@@ -17,10 +17,20 @@
     <!-- Project Image and Content -->
     <div class="flex flex-col md:flex-row gap-8 mb-12">
         <div class="md:w-1/3">
-            <img src="{{ url_for('static', filename='images/' + project.image) }}" alt="{{ project.title }}" class="w-full h-auto rounded-lg shadow-lg">
+            <img src="{{ url_for('static', filename='images/project5.JPG') }}" alt="HouseBot" class="w-full h-auto rounded-lg shadow-lg">
         </div>
         <div class="md:w-2/3 prose">
-            {{ project.content | safe }}
+            <p>Developed an automated apartment hunting assistant that monitors a housing website and notifies users through Discord. A small, simple project made in two afternoons. <br><br></p>
+            
+            <h2 class="font-bold underline">Key Features</h2>
+            <ul class="list-disc pl-5">
+                <li>Automated web scraping of a housing website</li>
+                <li>Real-time Discord notifications</li>
+                <li>Customizable search criteria</li>
+            </ul>
+            
+            <h2 class="font-bold underline"><br>Technical Details</h2>
+            <p>The project utilized Python for web scraping and API integration with Discord. It checks a site for new apartment listings and if there are new ones it sends a message with the relevant information in a discord server.</p>
         </div>
     </div>
 
