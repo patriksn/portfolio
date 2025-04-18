@@ -26,11 +26,10 @@
         </ul>
     </div>
 
-    <!-- First Block: Image Left, Text Right -->
+    <!-- Project Image and Content -->
     <div class="flex flex-col md:flex-row gap-8 mb-12">
         <div class="md:w-1/3">
             <img src="{{ url_for('static', filename='images/' + project.image) }}" alt="{{ project.title }}" class="w-full h-auto rounded-lg shadow-lg">
-            <figcaption class="text-center text-sm text-gray-600">Nightscout dashboard showing real-time blood sugar data</figcaption>
         </div>
         <div class="md:w-2/3 prose">
             <h2 class="font-bold underline">Overview</h2>
