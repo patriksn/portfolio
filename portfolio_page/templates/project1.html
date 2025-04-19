@@ -64,6 +64,17 @@
 </style>
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Project Header -->
+    <div class="mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">{{ project.title }}</h1>
+        <div class="flex flex-wrap gap-2">
+            {% for tech in project.technologies %}
+            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">{{ tech }}</span>
+            {% endfor %}
+        </div>
+    </div>
+
     <!-- Learning Highlights Box -->
     <div class="bg-gray-200 p-4 rounded-lg shadow-[0_4px_20px_4px_rgba(0,0,0,0.3)] md:w-1/3 mb-8">
         <h3 class="font-bold underline mb-2">Quick summary of my learnings</h3>
@@ -85,7 +96,7 @@
                  alt="Project 1 Feature Analysis" 
                  class="w-full h-auto rounded-lg shadow-lg zoomable"
                  onclick="toggleZoom(this)">
-            <figcaption class="text-center text-sm text-gray-600">Raw time-series EEG data.</figcaption>
+            <figcaption class="text-center text-sm text-gray-600"></figcaption>
         </div>
         <div class="md:w-2/3 prose">
             <h2 class="font-bold underline">Overview</h2>
@@ -95,7 +106,7 @@
 
     <!-- Second Block: Text Left, Image Right -->
     <div class="flex flex-col-reverse md:flex-row gap-8 mb-12">
-        <div class="md:w-3/4 prose">
+        <div class="md:w-2/3 prose">
             <h2 class="font-bold underline">Key Features</h2>
             <ul class="list-disc pl-5">
                 <li>Developed an explainable, simple regression tree model that performed the task well</li>
@@ -105,7 +116,7 @@
                 <li>Used SHAP to explain the model's predictions, and rank the features based on their importance</li>
             </ul>
         </div>
-        <div class="md:w-1/4 relative">
+        <div class="md:w-1/3 relative">
             <img src="{{ url_for('static', filename='images/project1_2.JPG') }}" 
                  alt="Project 1 Feature Analysis" 
                  class="w-full h-auto rounded-lg shadow-lg zoomable"
@@ -118,56 +129,62 @@
 
     <!-- Third Block: Image Left, Text Right -->
     <div class="flex flex-col md:flex-row gap-8 mb-12">
-        <div class="md:w-1/4">
+        <div class="md:w-1/3">
             <img src="{{ url_for('static', filename='images/project1_6.png') }}" 
                  alt="Project 1 Results" 
                  class="w-full h-auto rounded-lg shadow-lg zoomable"
                  onclick="toggleZoom(this)">
             <figcaption class="text-center text-sm text-gray-600">SHAP feature importance evaluation.</figcaption>
         </div>
-        <div class="md:w-3/4 prose">
+        <div class="md:w-2/3 prose">
             <h2 class="font-bold underline">Technical Details</h2>
             <p>The project involved extensive data wrangling and feature engineering to extract meaningful patterns from EEG data. I developed a data pipeline that pre-processed the data and extracted features. It was written in python in Google Colab. The raw data was inputted as CSV-files. The model was trained on a carefully curated dataset. Discussions with doctors as well as a look into the state-of-the-art research was taken into consideration in the feature engineering as well as the result interpretation. SHAP was the selected evaluator for this, as the importance of the features was as interesting a result as the performance itself. A literature review and deep dive into the latest research was performed prior to carrying out the project.</p>
+            
+            {% if project.links %}
+            <div class="mt-8">
+                {% if project.links.thesis %}
+                <p>You can read the full thesis here:</p>
+                <a href="{{ project.links.thesis }}" target="_blank" class="text-blue-600 hover:text-blue-800">View on Diva →</a>
+                {% endif %}
+                {% if project.links.pdf %}
+                <p>You can also download the thesis PDF here:</p>
+                <a href="{{ url_for('static', filename=project.links.pdf) }}" target="_blank" class="text-blue-600 hover:text-blue-800">Download PDF →</a>
+                {% endif %}
+            </div>
+            {% endif %}
         </div>
     </div>
 
+
+    <h2 class="font-bold underline">Image gallery<br><br></h2>
+
     <!-- Fourth Block: Three Images with Captions -->
     <div class="flex flex-col md:flex-row gap-8 mb-12">
+        
         <div class="md:w-1/3">
             <img src="{{ url_for('static', filename='images/project1_7.JPG') }}" 
                  alt="Project Image 1" 
                  class="w-full h-auto rounded-lg shadow-lg zoomable"
                  onclick="toggleZoom(this)">
-            <figcaption class="text-center text-sm text-gray-600">Full data pipeline.</figcaption>
+            <figcaption class="text-center text-sm text-gray-600">Full flow from raw data to results.</figcaption>
         </div>
         <div class="md:w-1/3">
             <img src="{{ url_for('static', filename='images/project1_3.png') }}" 
                  alt="Project Image 2" 
                  class="w-full h-auto rounded-lg shadow-lg zoomable"
                  onclick="toggleZoom(this)">
-            <figcaption class="text-center text-sm text-gray-600">Correlation heatmap of all features.</figcaption>
+            <figcaption class="text-center text-sm text-gray-600">Correlation heatmap of all features. Only a few were used in the final model to reduce unnecessary dimensionality.</figcaption>
         </div>
         <div class="md:w-1/3">
             <img src="{{ url_for('static', filename='images/project1_4.png') }}" 
                  alt="Project Image 3" 
                  class="w-full h-auto rounded-lg shadow-lg zoomable"
                  onclick="toggleZoom(this)">
-            <figcaption class="text-center text-sm text-gray-600">Example of a removed segment.</figcaption>
+            <figcaption class="text-center text-sm text-gray-600">Example of automatically removed segments.</figcaption>
         </div>
     </div>
 
-    {% if project.links %}
-    <div class="mt-8">
-        {% if project.links.thesis %}
-        <p>You can read the full thesis here:</p>
-        <a href="{{ project.links.thesis }}" target="_blank" class="text-blue-600 hover:text-blue-800">View on Diva →</a>
-        {% endif %}
-        {% if project.links.pdf %}
-        <p>You can also download the thesis PDF here:</p>
-        <a href="{{ url_for('static', filename=project.links.pdf) }}" target="_blank" class="text-blue-600 hover:text-blue-800">Download PDF →</a>
-        {% endif %}
-    </div>
-    {% endif %}
+    
 </div>
 
 <script>
