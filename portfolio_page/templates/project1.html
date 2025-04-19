@@ -64,33 +64,30 @@
 </style>
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <!-- Project Header -->
-    <div class="mb-12">
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">{{ project.title }}</h1>
-        <div class="flex flex-wrap gap-2">
-            {% for tech in project.technologies %}
-            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">{{ tech }}</span>
-            {% endfor %}
-        </div>
+    <!-- Learning Highlights Box -->
+    <div class="bg-gray-200 p-4 rounded-lg shadow-[0_4px_20px_4px_rgba(0,0,0,0.3)] md:w-1/3 mb-8">
+        <h3 class="font-bold underline mb-2">Quick summary of my learnings</h3>
+        <ul class="list-disc pl-5">
+            <li>Explainable ML models, theory and practice</li>
+            <li>scikit-learn</li>
+            <li>Data processing and pipeline</li>
+            <li>Feature engineering and selection</li>
+            <li>Model design (regression tree)</li>
+            <li>SHAP feature evaluation</li>
+        </ul>
+        <p><br>Read the full report <a href="{{ project.links.thesis }}" target="_blank" class="text-blue-600 hover:text-blue-800">here</a>.</p>
     </div>
 
-    <!-- First Block: Highlights Box Left, Text Right -->
+    <!-- First Block: Image Left, Text Right -->
     <div class="flex flex-col md:flex-row gap-8 mb-12">
-        <div class="md:w-1/4">
-            <div class="bg-gray-200 p-4 rounded-lg shadow-[0_4px_20px_4px_rgba(0,0,0,0.3)] h-full">
-                <h3 class="font-bold underline mb-2">Quick summary of my learnings</h3>
-                <ul class="list-disc pl-5">
-                    <li>Explainable ML models, theory and practice</li>
-                    <li>scikit-learn</li>
-                    <li>Data processing and pipeline</li>
-                    <li>Feature engineering and selection</li>
-                    <li>Model design (regression tree)</li>
-                    <li>SHAP feature evaluation</li>
-                </ul>
-                <p><br>Read the full report <a href="{{ project.links.thesis }}" target="_blank" class="text-blue-600 hover:text-blue-800">here</a>.</p>
-            </div>
+        <div class="md:w-1/3">
+            <img src="{{ url_for('static', filename='images/project1.JPG') }}" 
+                 alt="Project 1 Feature Analysis" 
+                 class="w-full h-auto rounded-lg shadow-lg zoomable"
+                 onclick="toggleZoom(this)">
+            <figcaption class="text-center text-sm text-gray-600">Raw time-series EEG data.</figcaption>
         </div>
-        <div class="md:w-3/4 prose">
+        <div class="md:w-2/3 prose">
             <h2 class="font-bold underline">Overview</h2>
             <p>This project focused on developing a machine learning model to predict brain maturation in babies born prematurely, using EEG data. The model was designed to be explainable, allowing healthcare professionals to understand its decision-making process. The final model performed comparably to expert doctors, and the SHAP feature importance evaluation gave feedback to the doctors as to which features they should focus on when inspecting the data (as the evaluation is normally performed visually by the doctors).</p>
         </div>
@@ -131,6 +128,31 @@
         <div class="md:w-3/4 prose">
             <h2 class="font-bold underline">Technical Details</h2>
             <p>The project involved extensive data wrangling and feature engineering to extract meaningful patterns from EEG data. I developed a data pipeline that pre-processed the data and extracted features. It was written in python in Google Colab. The raw data was inputted as CSV-files. The model was trained on a carefully curated dataset. Discussions with doctors as well as a look into the state-of-the-art research was taken into consideration in the feature engineering as well as the result interpretation. SHAP was the selected evaluator for this, as the importance of the features was as interesting a result as the performance itself. A literature review and deep dive into the latest research was performed prior to carrying out the project.</p>
+        </div>
+    </div>
+
+    <!-- Fourth Block: Three Images with Captions -->
+    <div class="flex flex-col md:flex-row gap-8 mb-12">
+        <div class="md:w-1/3">
+            <img src="{{ url_for('static', filename='images/project1_7.JPG') }}" 
+                 alt="Project Image 1" 
+                 class="w-full h-auto rounded-lg shadow-lg zoomable"
+                 onclick="toggleZoom(this)">
+            <figcaption class="text-center text-sm text-gray-600">Full data pipeline.</figcaption>
+        </div>
+        <div class="md:w-1/3">
+            <img src="{{ url_for('static', filename='images/project1_3.png') }}" 
+                 alt="Project Image 2" 
+                 class="w-full h-auto rounded-lg shadow-lg zoomable"
+                 onclick="toggleZoom(this)">
+            <figcaption class="text-center text-sm text-gray-600">Correlation heatmap of all features.</figcaption>
+        </div>
+        <div class="md:w-1/3">
+            <img src="{{ url_for('static', filename='images/project1_4.png') }}" 
+                 alt="Project Image 3" 
+                 class="w-full h-auto rounded-lg shadow-lg zoomable"
+                 onclick="toggleZoom(this)">
+            <figcaption class="text-center text-sm text-gray-600">Example of a removed segment.</figcaption>
         </div>
     </div>
 
