@@ -117,13 +117,13 @@
             </ul>
         </div>
         <div class="md:w-1/3 relative">
-            <img src="{{ url_for('static', filename='images/project1_2.JPG') }}" 
-                 alt="Project 1 Feature Analysis" 
+            <img src="{{ url_for('static', filename='images/project1_7.JPG') }}" 
+                 alt="Project Image 1" 
                  class="w-full h-auto rounded-lg shadow-lg zoomable"
                  onclick="toggleZoom(this)">
             <i class="fas fa-arrow-left arrow"></i>
             <span class="zoom-text">Click to zoom</span>
-            <figcaption class="text-center text-sm text-gray-600">Raw time-series EEG data.</figcaption>
+            <figcaption class="text-center text-sm text-gray-600">Full flow from raw data to results.</figcaption>
         </div>
     </div>
 
@@ -134,7 +134,7 @@
                  alt="Project 1 Results" 
                  class="w-full h-auto rounded-lg shadow-lg zoomable"
                  onclick="toggleZoom(this)">
-            <figcaption class="text-center text-sm text-gray-600">SHAP feature importance evaluation.</figcaption>
+            <figcaption class="text-center text-sm text-gray-600">SHAP feature importance evaluation result.</figcaption>
         </div>
         <div class="md:w-2/3 prose">
             <h2 class="font-bold underline">Technical Details</h2>
@@ -160,13 +160,12 @@
 
     <!-- Fourth Block: Three Images with Captions -->
     <div class="flex flex-col md:flex-row gap-8 mb-12">
-        
         <div class="md:w-1/3">
-            <img src="{{ url_for('static', filename='images/project1_7.JPG') }}" 
-                 alt="Project Image 1" 
+            <img src="{{ url_for('static', filename='images/project1_2.JPG') }}" 
+                 alt="Project 1 Feature Analysis" 
                  class="w-full h-auto rounded-lg shadow-lg zoomable"
                  onclick="toggleZoom(this)">
-            <figcaption class="text-center text-sm text-gray-600">Full flow from raw data to results.</figcaption>
+            <figcaption class="text-center text-sm text-gray-600">Raw time-series EEG data.</figcaption>
         </div>
         <div class="md:w-1/3">
             <img src="{{ url_for('static', filename='images/project1_3.png') }}" 
