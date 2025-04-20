@@ -70,8 +70,10 @@
     <div class="bg-gray-200 p-4 rounded-lg shadow-[0_4px_20px_4px_rgba(0,0,0,0.3)] md:w-1/3 mb-8">
         <h3 class="font-bold underline mb-2">Quick summary of my learnings</h3>
         <ul class="list-disc pl-5">
-            <li>U-Net models,VGG16</li>
+            <li>U-Net model design</li>
             <li>Image data processing</li>
+            <li>K-fold cross validation</li>
+            <li>Working with Docker</li>
         </ul>
     </div>
 
@@ -87,6 +89,8 @@
         <div class="md:w-2/3 prose">
             <h2 class="font-bold underline">Overview</h2>
             <p>This project focused on designing a U-Net model to segment lungs in CT scans. The dataset consisted of over 8000 CT scans with ground truth masks. The model was deployed in a Docker container and accessed using CLI. </p>
+            <p><b>Model:</b> The designed model was a straightforward U-net model where the encoder (contractions path) consisted of 4 blocks, each containing a convolutional layer, one max pooling-layer and a dropout layer. The decoder (explansion path) consisted of 4 blocks of transposed convolutional layers, concatenated layers with the corresponding blocks encoder (to recover spatial detail that gets lost in downsampling)and convolutional blocks. The activation function in the output layer was a sigmoid layer.</p>
+            <p><b>Training and result:</b> The ground truth masks for left and right lung were binarized and then the model was trained on the data for 50 epochs. Evaluation metrics can be seen in the image below.  </p>
         </div>
     </div>
 
@@ -97,9 +101,9 @@
             <ul class="list-disc pl-5">
                 <li>Implementing an U-Net model from scratch.</li>
                 <li>Data processing practices.</li>
-                <li>Gained experience with pandas, TensorFlow, keras.</li>
-                <li>Add more later.</li>
-                <li>Add more later.</li>
+                <li>Gained more experience with pandas, TensorFlow, keras.</li>
+                <li>K-fold cross validation.</li>
+                <li>Working with image data.</li>
             </ul>
         </div>
         <div class="md:w-1/3 relative">
@@ -114,6 +118,7 @@
     </div>
 
     <!-- Third Block: Image Left, Text Right -->
+    <!--
     <div class="flex flex-col md:flex-row gap-8 mb-12">
         <div class="md:w-1/3">
             <img src="{{ url_for('static', filename='images/project3_2.JPG') }}" 
@@ -129,6 +134,7 @@
             </ul>
         </div>
     </div>
+    -->
 
     {% if project.links %}
     <div class="mt-8">
