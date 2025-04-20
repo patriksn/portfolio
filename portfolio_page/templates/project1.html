@@ -134,7 +134,7 @@
                  alt="Project 1 Results" 
                  class="w-full h-auto rounded-lg shadow-lg zoomable"
                  onclick="toggleZoom(this)">
-            <figcaption class="text-center text-sm text-gray-600">SHAP feature importance evaluation result. Each row is a feature and the points show their contribution to the model's predictions.</figcaption>
+            <figcaption class="text-center text-sm text-gray-600">SHAP feature importance evaluation result. Each row is a feature and the points (one point per EEG datapoint) show their contribution to the model's predictions.</figcaption>
         </div>
         <div class="md:w-2/3 prose">
             <h2 class="font-bold underline">Technical Details</h2>
@@ -165,7 +165,7 @@
                  alt="Project 1 Feature Analysis" 
                  class="w-full h-auto rounded-lg shadow-lg zoomable"
                  onclick="toggleZoom(this)">
-            <figcaption class="text-center text-sm text-gray-600">Raw time-series EEG data.</figcaption>
+            <figcaption class="text-center text-sm text-gray-600">Raw time-series EEG data. The week numbers indicate when the neonate was born.</figcaption>
         </div>
         <div class="md:w-1/3">
             <img src="{{ url_for('static', filename='images/project1_3.png') }}" 
