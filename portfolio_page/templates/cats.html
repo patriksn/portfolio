@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Cats - Fun Facts{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold text-gray-800 mb-8 text-center">Fun Facts About Cats</h1>
+    
+    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+             alt="Cute cat" 
+             class="w-full h-auto rounded-lg mb-6">
+        
+        <div class="space-y-4">
+            <h2 class="text-2xl font-semibold text-gray-700">Did you know?</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-600">
+                <li>Cats can rotate their ears 180 degrees</li>
+                <li>The world's oldest cat lived to be 38 years old</li>
+                <li>Cats spend 70% of their lives sleeping</li>
+                <li>A cat's nose print is unique, much like a human's fingerprint</li>
+                <li>Cats can jump up to 6 times their length</li>
+                <li>They have 32 muscles in each ear</li>
+                <li>Cats can make over 100 different sounds</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %} 

@@ -363,6 +363,10 @@ def project6():
         logger.error(f"Error rendering project6: {str(e)}", exc_info=True)
         return render_template('500.html'), 500
 
+@app.route('/cats')
+def cats():
+    return render_template('cats.html')
+
 @app.errorhandler(404)
 def not_found_error(error):
     return render_template('404.html'), 404
