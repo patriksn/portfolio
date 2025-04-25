@@ -9,7 +9,7 @@
         <h1 class="text-4xl font-bold text-gray-900 mb-4">{{ project.title }}</h1>
         <div class="flex flex-wrap gap-2">
             {% for tech in project.technologies %}
-            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">{{ tech }}</span>
+            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">{{ tech }}</span>
             {% endfor %}
         </div>
     </div>
@@ -38,11 +38,11 @@
     <div class="mt-8">
         {% if project.links.thesis %}
         <p>You can find the complete thesis and documentation here:</p>
-        <a href="{{ project.links.thesis }}" target="_blank" class="text-blue-600 hover:text-blue-800">View on Diva →</a>
+        <a href="{{ project.links.thesis }}" target="_blank" class="text-green-600 hover:text-green-800">View on Diva →</a>
         {% endif %}
         {% if project.links.pdf %}
         <p>You can also download the thesis PDF here:</p>
-        <a href="{{ url_for('static', filename=project.links.pdf) }}" target="_blank" class="text-blue-600 hover:text-blue-800">Download PDF →</a>
+        <a href="{{ url_for('static', filename=project.links.pdf) }}" target="_blank" class="text-green-600 hover:text-green-800">Download PDF →</a>
         {% endif %}
     </div>
     {% endif %}
